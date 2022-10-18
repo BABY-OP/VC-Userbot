@@ -12,7 +12,7 @@ from pyrogram.types import Message
 from youtubesearchpython import SearchVideos
 from yt_dlp import YoutubeDL
 from config import HNDLR
-
+from config import SUDO_USERS
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["song", "music"], prefixes=f"{HNDLR}"))
 async def song(client, message: Message):
