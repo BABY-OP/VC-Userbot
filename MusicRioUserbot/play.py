@@ -12,7 +12,7 @@ from pytgcalls.types.input_stream.quality import (
     MediumQualityVideo,
 )
 from youtubesearchpython import VideosSearch
-
+from MusicRioUserbot.helpers.decorators import authorized_users_only
 from config import HNDLR, bot, call_py
 from MusicRioUserbot.helpers.queues import QUEUE, add_to_queue, get_queue
 
