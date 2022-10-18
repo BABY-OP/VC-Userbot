@@ -5,7 +5,7 @@ from config import HNDLR
 from MusicRioUserbot.helpers.get_file_id import get_file_id
 
 
-@Client.on_message(filters.command(["id"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["id"], prefixes=f"{HNDLR}"))
 async def showid(_, message: Message):
     chat_type = message.chat.type
 
