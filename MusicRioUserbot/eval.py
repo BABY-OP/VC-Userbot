@@ -7,6 +7,7 @@ from io import StringIO
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from config import HNDLR, bot as USER
+from config import SUDO_USERS
 
 async def aexec(code, client, m: Message):
     exec(
