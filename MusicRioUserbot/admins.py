@@ -4,7 +4,7 @@ from config import HNDLR, call_py
 from MusicRioUserbot.helpers.decorators import authorized_users_only
 from MusicRioUserbot.helpers.handlers import skip_current_song, skip_item
 from MusicRioUserbot.helpers.queues import QUEUE, clear_queue
-
+from config import SUDO_USERS
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["skip"], prefixes=f"{HNDLR}"))
 async def skip(client, m: Message):
