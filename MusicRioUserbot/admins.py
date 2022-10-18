@@ -6,8 +6,7 @@ from MusicRioUserbot.helpers.handlers import skip_current_song, skip_item
 from MusicRioUserbot.helpers.queues import QUEUE, clear_queue
 
 
-@Client.on_message(filters.command(["skip"], prefixes=f"{HNDLR}"))
-@authorized_users_only
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["skip"], prefixes=f"{HNDLR}"))
 async def skip(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
@@ -40,7 +39,7 @@ async def skip(client, m: Message):
             await m.reply(OP)
 
 
-@Client.on_message(filters.command(["end", "stop"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["end", "stop"], prefixes=f"{HNDLR}"))
 @authorized_users_only
 async def stop(client, m: Message):
     await m.delete()
@@ -56,8 +55,7 @@ async def stop(client, m: Message):
         await m.reply("**❌ Tidak ada apapun yang sedang diputar!**")
 
 
-@Client.on_message(filters.command(["pause"], prefixes=f"{HNDLR}"))
-@authorized_users_only
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["pause"], prefixes=f"{HNDLR}"))
 async def pause(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
@@ -73,7 +71,7 @@ async def pause(client, m: Message):
         await m.reply("** ❌ Tidak ada apapun yang sedang diputar!**")
 
 
-@Client.on_message(filters.command(["resume"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["resume"], prefixes=f"{HNDLR}"))
 @authorized_users_only
 async def resume(client, m: Message):
     await m.delete()
