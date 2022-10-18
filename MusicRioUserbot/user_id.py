@@ -3,7 +3,7 @@ from pyrogram.types import Message
 
 from config import HNDLR
 from MusicRioUserbot.helpers.get_file_id import get_file_id
-
+from config import SUDO_USERS
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["id"], prefixes=f"{HNDLR}"))
 async def showid(_, message: Message):
